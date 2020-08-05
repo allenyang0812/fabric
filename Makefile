@@ -222,7 +222,8 @@ generate-metrics-doc: buildenv
 $(BUILD_DIR)/%/chaintool: Makefile
 	@echo "Installing chaintool"
 	@mkdir -p $(@D)
-	curl -fL $(CHAINTOOL_URL) > $@
+	# curl -fL $(CHAINTOOL_URL) > $@
+	@cp fabric-chaintool-1.1.3.jar $@
 	chmod +x $@
 
 # We (re)build a package within a docker context but persist the $GOPATH/pkg
